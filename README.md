@@ -1,2 +1,0 @@
-# Fortinet
-Fortinet products settings
