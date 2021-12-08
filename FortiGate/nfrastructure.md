@@ -54,92 +54,94 @@
 Use distance attribute to ensure that only one route is activate is a time
 
 ***
-# Diagnostics
+### Diagnostics
 ***
-Active routes
----------------------------------------------------------------------------------------------------
+##### Active routes
+
 S* 192.168.1.0/24 [10/0] (Distance/Metric) via 192.168.1.254, port2, [25/0] (Priority/Weight)
----------------------------------------------------------------------------------------------------
 Active and inactive Routes
----------------------------------------------------------------------------------------------------
-# get router info routing-table database
+
+    get router info routing-table database
 	*> - Active routes
 	__ - inactive routes
----------------------------------------------------------------------------------------------------
-Policy Routes and ISDB Routes
----------------------------------------------------------------------------------------------------
-# diagnose firewall proute list
----------------------------------------------------------------------------------------------------
-Packet Capture
----------------------------------------------------------------------------------------------------
-# diagnose sniffer packet <interface> '<filter>' <verbosity> <count> <timestamp> <frame size>
-	<interface> - [ any, port, internal ]
-	<filter> - tcpdump format
-	<level> - how much information to capture
-	<count> - number of packets
-	<timestamp> - print timestamp
-		a - print absolute timestamp
-		l - print local timestamp
-	<frame size> - specify length
+***
+### Policy Routes and ISDB Routes
+***
+* Protocol
+* Source address
+* Source ports
+* Destination ports
+* Type of service (TOS) bits
+***
+    diagnose firewall proute list
+***
+
+##### Packet Capture
+***
+	diagnose sniffer packet <interface> '<filter>' <verbosity> <count> <timestamp> <frame size>
+		<interface> - [ any, port, internal ]
+		<filter> - tcpdump format
+		<level> - how much information to capture
+		<count> - number of packets
+		<timestamp> - print timestamp
+			a - print absolute timestamp
+			l - print local timestamp
+		<frame size> - specify length
 	
 Verbosity level:
-	1) IP Headers
-	2) IP Headers | Packet Payloads
-	3) IP Headers | Packet Payloads | Ethernet Headers
-	4) IP Headers |                 |                  |Interface Name
-	5) IP Headers | Packet Payloads | Interface Name
-	6) IP Headers | Packet Payloads | Ethernet Headers |Interface Name
-===================================================================================================
-===================================================================================================
-[SD-WAN]
-===================================================================================================
-===================================================================================================
-SD-WAN Load Balancing Methods
-===================================================================================================
-# config system virtual-wan-link
-# set load-balance-mode <load balance mode>
-
-	* Source IP
-	* Source-Destination IP
-	* Usage (Spillover) - Use one interface until threshold is reached; then, use the next interface
-	* Weight - Traffic will be distributed based on weights assigned on the interfaces
-	* Volume - Sessions are distributed so that traffic volume is distributed by the interface weight
-===================================================================================================
-Perfomance SLA
-===================================================================================================
-===================================================================================================
-[Virtual Domain (VDOM)]
-===================================================================================================
-===================================================================================================
-[Enabling VDOMs]
-===================================================================================================
----------------------------------------------------------------------------------------------------
-# config system global
-	set vdom-mode no-vdom/split-vdom/multi-vdom
----------------------------------------------------------------------------------------------------
-# config vdom-mode
-	edit <vdom>
-		config system settings
-			set optmode [ nat | transparent ]
----------------------------------------------------------------------------------------------------
-! EnablingVDOMswon’t reboot your FortiGate, butwill log out all active admin sessions.
-! Enabling VDOMsrestructures both the GUI and CLI, which you will see when you log in again.
-! This also does not affect anytraffic passing throughFortiGate
----------------------------------------------------------------------------------------------------
-===================================================================================================
-[Accessing Global and Per-VDOM Settings]
-===================================================================================================
-# config global
-	(global)#
 	
-# config vdom
-	(vdom)# edit <vdom name>
-	(vdom-name)#
+1) IP Headers
+2) IP Headers | Packet Payloads
+3) IP Headers | Packet Payloads | Ethernet Headers
+4) IP Headers |                 |                  |Interface Name
+5) IP Headers | Packet Payloads | Interface Name
+6) IP Headers | Packet Payloads | Ethernet Headers |Interface Name
+***
+***
+# [SD-WAN]
+***
 
-sudo [ global | vdom-name ] [ diagnose | execute | show | get ]
-===================================================================================================
-[Global Security Profiles]
-===================================================================================================
+### SD-WAN Load Balancing Methods
+
+	config system virtual-wan-link
+	set load-balance-mode <load balance mode>
+		* Source IP
+		* Source-Destination IP
+		* Usage (Spillover) - Use one interface until threshold is reached; then, use the next interface
+		* Weight - Traffic will be distributed based on weights assigned on the interfaces
+		* Volume - Sessions are distributed so that traffic volume is distributed by the interface weight
+***
+### Perfomance SLA
+***
+### [Virtual Domain (VDOM)]
+***
+##### Enabling VDOMs
+***
+	config system global
+		set vdom-mode no-vdom/split-vdom/multi-vdom
+	config vdom-mode
+		edit <vdom>
+			config system settings
+				set optmode [ nat | transparent ]
+***
+	
+	Enabling VDOMs won’t reboot your FortiGate, butwill log out all active admin sessions.
+	Enabling VDOMsrestructures both the GUI and CLI, which you will see when you log in again.
+	This also does not affect anytraffic passing throughFortiGate.***
+
+***
+##### Accessing Global and Per-VDOM Settings
+***
+	config global
+		(global)#
+	config vdom
+		(vdom)# edit <vdom name>
+		(vdom-name)#
+
+	sudo [ global | vdom-name ] [ diagnose | execute | show | get ]
+***
+##### Global Security Profiles
+***
 - Antivirus
 - Application Control
 - Data Leak Prevention
