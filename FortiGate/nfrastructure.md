@@ -35,9 +35,9 @@
 	config ssytem setting
 		set strict-src-check [disable|enable]
 
-# config system interface
-	edit <interface>
-		set src-check [enable|disable]
+	config system interface
+		edit <interface>
+			set src-check [enable|disable]
 ***
 ## Configuring Link Health Monitor
 ***
