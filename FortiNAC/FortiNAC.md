@@ -9,19 +9,21 @@ awareness of devices that are connected on that edge device. The traps that trig
 Linkdown, WarmStart, and ColdStart. This trigger keeps FortiNAC up-to-date in real-time as devices
 connect to and disconnect from edge device
 
+***
+
 ### L3 Polling
 
 ***
 
 
 ### Change VLAN 
-There are also some options that affect the management behavior for this device. If **VLAN Switching Enabled**
-is not selected, FortiNAC will never change a VLAN on this device
+There are also some options that affect the management behavior for this device. Если **VLAN Switching Enabled**
+не выбран, FortiNAC никогда не изменит VLAN на данном устройстве.
 
 ***
 
 ### Persistent Agent (Setting server IP)
-* Настройка адркса сервера для Windows машин настраивается через реестр
+* Настройка адреса сервера для Windows машин настраивается через реестр
 * Взаимодействие с FortiNAC каждые 15 мин
 
 ## Host Manual Registration
