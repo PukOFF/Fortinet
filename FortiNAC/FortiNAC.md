@@ -29,17 +29,17 @@ There are also some options that affect the management behavior for this device.
 ## Host Manual Registration
 
 ### Register as Device
-* Параметр «Device in Host View» моделирует устройство как хост, и оно будет отображаться и управляться как хост.
-* Представление «Device in Topology» отобразит хост в дереве топологии. Обратите внимание, что политики безопасности не
+* Параметр **«Device in Host View»** моделирует устройство как хост, и оно будет отображаться и управляться как хост.
+* Представление **«Device in Topology»** отобразит хост в дереве топологии. Обратите внимание, что политики безопасности не
 применяется к устройствам, смоделированным с помощью параметра «Device in Topology».
-* Параметр «Device in Host View and Topology» отобразит устройство в обоих местах.
+* Параметр **«Device in Host View and Topology»** отобразит устройство в обоих местах.
 * Раскрывающийся список Device Type используется для ручного назначения типа устройства и будет включать в себя все значения по умолчанию и административно созданные типы устройств
 
 ### Register as Host
 
-* «Register Host to User» — это параметр по умолчанию, и его следует выбирать, если хост и запись пользователя должны иметь
+* **«Register Host to User»** — это параметр по умолчанию, и его следует выбирать, если хост и запись пользователя должны иметь
 постоянная ассоциация. Это обычно имеет место в ситуациях BYOD, таких как гости и подрядчики.
-* «Register Host as Device» не устанавливает постоянную связь между конкретным пользователем и
+* **«Register Host as Device»** не устанавливает постоянную связь между конкретным пользователем и
 хост, и это обычно используется для корпоративных активов или устройств IoT. Это эквивалентно устройству в
 Параметр Host View из предыдущего слайда
 
@@ -116,3 +116,16 @@ other group. The logic that applies to these results was shown on the previous s
 Select the Host Based option in the CLI Configurations section will prevent FortiNAC from making the
 VLAN change, and instead it will only apply the CLI configuration. Host-based CLI configurations are designed
 to dynamically insert or remove ACL entries, enforcing isolation using ACLs
+
+
+## LOcal Radius
+
+The local RADIUS server requires you to install a server certificate for EAP authentication. The following are
+the supported 802.1X EAP methods:
+• TTLS/PAP: This method handles authentication requests through LDAP servers defined on FortiNAC, RADIUS servers defined on FortiNAC, and local users in the FortiNAC database. These local users include
+guest accounts.
+• TTLS/MSCHAPv2 or PEAP/MSCHAPv2: These methods authenticate AD users only. You must join
+FortiNAC to the domain and this capability is currently limited to a single domain.
+• TLS: This method authenticates UserPrincipalName SAN user from the certificate. This requires you to
+install the endpoint trust certificate so FortiNAC can validate the client-side certificate.
+By default, the local RADIUS server uses port 1645 for communication
