@@ -1,10 +1,5 @@
 # **Задача 1**:
-
-<<<<<<< HEAD
-\ color {red} {**Настройка Captive Portal для возможности скачивания**} $
-=======
-Настройка Captive Portal для возможности скачивания
->>>>>>> 8a905ffee1683951e1b20be2f42448e18af74c24
+**Настройка Captive Portal для возможности скачивания**
 
 ### Результат:
 
@@ -79,4 +74,4 @@
 * В настройках Persistent Agent установить тип аутентификации Local(**System>Settings>Persistent Agent>Credential Configuration**):
     * Enable Registration
     * Register As Device
-    * Authetication Type: Local
+    * *Authetication Type:* Local
