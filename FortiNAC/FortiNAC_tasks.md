@@ -38,14 +38,19 @@
 
 * В настройках интерфейса сетевого подключения в Windows: **Включить проверку подлинности IEEE 802.1X**;
 
+![Netwok Options 802.1X](/Fortinet/Fortinet/FortiNAC/img/network_options.png)
+
 * Выбрать проверку подлинности в сети: **Microsofft: EAP-TTLS**;
   
 *В случае необходимости получить доступ при непрохождении процесса аутентификации выбрать Вернуться к неавторизованному сетевому доступу*
 
 * В параметрах **Microsofft: EAP-TTLS** выбрать метод проверки подлинности, отличный от EAP: **Незашифрованный пароль (PAP)**;
-* 
 
-* Cоздать пользователя в локалььной базе FotiNAC (**Users & Hosts > User Accounts**);
+![TTLS Options](/Fortinet/Fortinet/FortiNAC/img/ttls_options.png)
+
+* * Создать пользователя в локальной базе FortiNAC (**Users & Hosts > User Accounts**):
+    * *User ID:* local;
+    * *Password:* password;
 
 * Создать профиль для подключаемого устройства (**Users & Hosts > Device Profiling Rules**);
 
@@ -55,10 +60,18 @@
         RADIUS Ayth Type: 802.1X
             802.1X EAP Type: TTLS
 
+![TTLS Profile](/Fortinet/Fortinet/FortiNAC/img/ttls_profile.png)
+
 * Создать политику сетевого доступа (**Policy & Objects > Network Access**)
+
+![TTLS Policy](/Fortinet/Fortinet/FortiNAC/img/ttls_policy.png)
+
     *В зависимости от требуемой политики, настраивается доступ в Isolate или Corporate сегмент*
 
 
+
+***
+### Настройка локальной аутентификации (Persistent Agent)
 
 * Отключить на конечной рабочей стнации проверки аутентификации средствами 802.1x
 * Создать пользователя в локальной базе FortiNAC (**Users & Hosts > User Accounts**):
