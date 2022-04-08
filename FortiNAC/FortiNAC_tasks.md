@@ -38,7 +38,8 @@
 
 * В настройках интерфейса сетевого подключения в Windows: **Включить проверку подлинности IEEE 802.1X**;
 
-![Netwok Options 802.1X](/Fortinet/FortiNAC/img/network_options.png)
+![Netwok Options 802.1X](/img/network_options.png)
+https://github.com/PukOFF/DevOps/blob/main/Linux/Bitwarden_2FA.png
 
 * Выбрать проверку подлинности в сети: **Microsofft: EAP-TTLS**;
   
