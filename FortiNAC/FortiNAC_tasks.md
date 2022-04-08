@@ -38,8 +38,7 @@
 
 * В настройках интерфейса сетевого подключения в Windows: **Включить проверку подлинности IEEE 802.1X**;
 
-![Netwok Options 802.1X](/img/network_options.png)
-https://github.com/PukOFF/DevOps/blob/main/Linux/Bitwarden_2FA.png
+![Netwok Options 802.1X](/FortiNAC/img/network_options.png)
 
 * Выбрать проверку подлинности в сети: **Microsofft: EAP-TTLS**;
   
@@ -47,7 +46,7 @@ https://github.com/PukOFF/DevOps/blob/main/Linux/Bitwarden_2FA.png
 
 * В параметрах **Microsofft: EAP-TTLS** выбрать метод проверки подлинности, отличный от EAP: **Незашифрованный пароль (PAP)**;
 
-![TTLS Options](/Fortinet/FortiNAC/img/ttls_options.png)
+![TTLS Options](/FortiNAC/img/ttls_options.png)
 
 * * Создать пользователя в локальной базе FortiNAC (**Users & Hosts > User Accounts**):
     * *User ID:* local;
@@ -61,11 +60,11 @@ https://github.com/PukOFF/DevOps/blob/main/Linux/Bitwarden_2FA.png
         RADIUS Ayth Type: 802.1X
             802.1X EAP Type: TTLS
 
-![TTLS Profile](/Fortinet/FortiNAC/img/ttls_profile.png)
+![TTLS Profile](/FortiNAC/img/ttls_profile.png)
 
 * Создать политику сетевого доступа (**Policy & Objects > Network Access**)
 
-![TTLS Policy](/Fortinet/FortiNAC/img/ttls_policy.png)
+![TTLS Policy](/FortiNAC/img/ttls_policy.png)
 
     *В зависимости от требуемой политики, настраивается доступ в Isolate или Corporate сегмент*
 
