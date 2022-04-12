@@ -118,7 +118,7 @@ VLAN change, and instead it will only apply the CLI configuration. Host-based CL
 to dynamically insert or remove ACL entries, enforcing isolation using ACLs
 
 
-## LOcal Radius
+## Local Radius
 
 The local RADIUS server requires you to install a server certificate for EAP authentication. The following are
 the supported 802.1X EAP methods:
@@ -129,3 +129,9 @@ FortiNAC to the domain and this capability is currently limited to a single doma
 • TLS: This method authenticates UserPrincipalName SAN user from the certificate. This requires you to
 install the endpoint trust certificate so FortiNAC can validate the client-side certificate.
 By default, the local RADIUS server uses port 1645 for communication
+
+### Persistent Agent Settings
+
+Persistent Agent settings are configurable when distributing the agent via software. They are not
+configurable when the agent is downloaded from the Captive Portal. Default values apply for any
+settings not modified
